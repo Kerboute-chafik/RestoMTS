@@ -39,6 +39,26 @@ class RestaurantRepository extends ServiceEntityRepository
         }
     }
 
+    public function findLastInserted()
+    {
+        return $this
+            ->createQueryBuilder("r")
+            ->orderBy("r.id", "DESC")
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult();
+    }
+    public function findByCity($city)
+    {
+        return $this
+            ->createQueryBuilder("r")
+            ->where('r.city = :q')
+            ->setParameter('q',$city)
+            ->orderBy("r.id", "DESC")
+            ->setMaxResults(10)
+            ->getQuery()
+            ->getResult();
+    }
 //    /**
 //     * @return Restaurant[] Returns an array of Restaurant objects
 //     */

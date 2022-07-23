@@ -12,8 +12,30 @@
         <div class="col-md-4">
             <p>Name: <span> {{ resto.name }}</span></p>
             <p>Description:<span> {{ resto.description }}</span></p>
+            <p>Note:<span> {{ note }} / 20</span></p>
+            <a class="btn btn-primary" href="{{ path('restaurant_add_review',{'id': resto.id}) }}">Add review</a>
         </div>
+
     </div>
 </div>
+    <div class="container mt-4">
+        Reviews
+        <div class="row">
+
+            {% for item in reviews %}
+            <div class="col-md-4">
+                <div class="card"> <i class="fa fa-quote-left u-color"></i>
+                    <p>{{ item.message }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="user-about"> <span class="font-weight-bold d-block">{{ item.user.firstname }} {{ item.user.lastname }}</span>
+                            <div class="d-flex flex-row mt-1"> <i class="fa fa-star u-color"></i> <i class="fa fa-star u-color"></i> <i class="fa fa-star-o u-color"></i> <i class="fa fa-star-o u-color"></i> <i class="fa fa-star-o u-color"></i> </div>
+                        </div>
+                        <div class="date"> {{ item.createdAt.format('d/m/Y') }} </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 
 {% endblock %}

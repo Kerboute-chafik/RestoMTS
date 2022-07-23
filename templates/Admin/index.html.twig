@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<div class="main-navbar">
+    <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
+    <div id="mainnav">
+        <ul class="nav-menu custom-scrollbar">
+                <li class="sidebar-main-title">
+                    <div>
+                        <h6 class="tradition-color size-col">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <i data-feather="sliders"></i>
+                                </div>
+                                <div class="col-md-10">
+                                    Configurations
+                                </div>
+                            </div>
+                        </h6>
+                    </div>
+                </li>
+
+                    <li><a class="nav-link menu-title" href="#"><i data-feather="grid"></i><span>City</span></a>
+                        <ul class="nav-submenu menu-content">
+
+                                <li class="btn btn-light"><i class="fa fa-plus"></i><a href="{{ path('app_city_new') }}">Add</a></li>
+
+                                <li class="btn btn-light"><i class="fa fa-list-ul"></i><a href="{{ path('app_city_index') }}">list</a></li>
+
+                        </ul>
+                    </li>
+            <li><a class="nav-link menu-title" href="#"><i data-feather="grid"></i><span>Restaurant</span></a>
+                <ul class="nav-submenu menu-content">
+
+                    <li class="btn btn-light"><i class="fa fa-plus"></i><a href="{{ path('app_restaurant_new') }}">Add</a></li>
+
+                    <li class="btn btn-light"><i class="fa fa-list-ul"></i><a href="{{ path('app_restaurant_index') }}">list</a></li>
+
+                </ul>
+            </li>
+            <li><a class="nav-link menu-title" href="#"><i data-feather="grid"></i><span>Reviews</span></a>
+                <ul class="nav-submenu menu-content">
+
+                    <li class="btn btn-light"><i class="fa fa-plus"></i><a href="{{ path('app_review_new') }}">Add</a></li>
+
+                    <li class="btn btn-light"><i class="fa fa-list-ul"></i><a href="{{ path('app_review_index') }}">list</a></li>
+
+                </ul>
+            </li>
+            <li><a class="nav-link menu-title" href="#"><i data-feather="grid"></i><span>Media</span></a>
+                <ul class="nav-submenu menu-content">
+
+                    <li class="btn btn-light"><i class="fa fa-plus"></i><a href="{{ path('app_media_new') }}">Add</a></li>
+
+                    <li class="btn btn-light"><i class="fa fa-list-ul"></i><a href="{{ path('app_media_index') }}">list</a></li>
+
+                </ul>
+            </li>
+
+
+        </ul>
+    </div>
+
+
+    <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
+</div>
+{% endblock %}

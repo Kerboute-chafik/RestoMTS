@@ -8,7 +8,14 @@
         <h1>Resto Rate</h1>
         <p> estias excepturi sint occaecati cupiditate non provident, fuga. Et harum quidem rerum facilis est et
             expedita d</p>
-
+        <form>
+            <select name="city">
+                {% for city in cities %}
+                <option value="{{ city.id }}"> {{ city.name }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit"> search </button>
+        </form>
     </div>
     <div class="container">
 
