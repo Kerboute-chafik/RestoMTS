@@ -51,7 +51,7 @@ class CityController extends AbstractController
      */
     public function show(City $city): Response
     {
-        return $this->render('city/show.html.twig', [
+        return $this->render('city/index.html.twig', [
             'city' => $city,
         ]);
     }

@@ -20,7 +20,7 @@
                         <h5 class="card-title">{{ item.name }}</h5>
                         <p class="card-text">{{ item.description }}</p>
                         <h5 class="card-footer"></h5>
-                        <a href="#" class="btn btn-primary">View</a>
+                        <a href="{{ path('restaurant_show',{'id' : item.id}) }}" class="btn btn-primary">View</a>
                     </div>
                 </div>
             {% endfor %}

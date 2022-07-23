@@ -73,7 +73,7 @@ class MediaController extends AbstractController
      */
     public function show(Media $medium): Response
     {
-        return $this->render('media/show.html.twig', [
+        return $this->render('media/index.html.twig', [
             'medium' => $medium,
         ]);
     }

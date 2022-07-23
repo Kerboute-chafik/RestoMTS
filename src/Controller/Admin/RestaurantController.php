@@ -51,7 +51,7 @@ class RestaurantController extends AbstractController
      */
     public function show(Restaurant $restaurant): Response
     {
-        return $this->render('restaurant/show.html.twig', [
+        return $this->render('restaurant/index.html.twig', [
             'restaurant' => $restaurant,
         ]);
     }
