@@ -3,18 +3,27 @@
 {% block title %}Hello HomeController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+    <div class="jumbotron text-center">
+        <h1>Resto Rate</h1>
+        <p> estias excepturi sint occaecati cupiditate non provident, fuga. Et harum quidem rerum facilis est et
+            expedita d</p>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/test/RestoRate/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/test/RestoRate/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+    </div>
+    <div class="container">
+
+        <div class="row">
+            {% for item in restos %}
+                <div class="card col-md-4">
+                    <img src="{{ asset(item.media.first.fileName) }}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.name }}</h5>
+                        <p class="card-text">{{ item.description }}</p>
+                        <h5 class="card-footer"></h5>
+                        <a href="#" class="btn btn-primary">View</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
