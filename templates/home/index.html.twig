@@ -22,16 +22,20 @@
         <div class="row">
             {% for item in restos %}
                 <div class="card col-md-4">
-                    <img src="{{ asset(item.media.first.fileName) }}" class="card-img-top" alt="">
+                   {% if item.media|length > 0 %}
+                       <img src="{{ asset(item.media.first.fileName) }}" class="card-img-top" alt="">
+                   {% endif %}
                     <div class="card-body">
                         <h5 class="card-title">{{ item.name }}</h5>
                         <p class="card-text">{{ item.description }}</p>
                         {% set sumratings = 0 %}
+                        {% if item.reviews|length > 0 %}
                         {% for rating in item.reviews %}
                             {% set sumratings = sumratings + rating.note %}
                         {% endfor %}
 
                         <h5 class="card-footer">Note : {{ sumratings / item.reviews|length }} / 20</h5>
+                      {% endif %}
                         <a href="{{ path('restaurant_show',{'id' : item.id}) }}" class="btn btn-primary">View</a>
                     </div>
                 </div>

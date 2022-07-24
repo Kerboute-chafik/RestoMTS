@@ -7,7 +7,7 @@
     <div class="container mt-4">
         <div class="row">
             <div class="col-md-8">
-                <img src="{{ asset(resto.media.first.fileName) }}" width="500" height="500" alt="">
+                <img src="{% if resto.media|length > 0 %} {{ asset(resto.media.first.fileName) }}    {% endif %}" width="500" height="500" alt="">
             </div>
             <div class="col-md-4">
                 <p>Name: <span> {{ resto.name }}</span></p>
